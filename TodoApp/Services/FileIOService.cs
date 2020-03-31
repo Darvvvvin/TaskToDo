@@ -18,7 +18,7 @@ namespace TodoApp.Services
         {
             PATH = path;
         }
-        public BindingList<TodoModel> LoadDate()
+        public BindingList<TodoModel> LoadData()
         {
             var fileExitsts = File.Exists(PATH);
             if (! fileExitsts)
@@ -33,7 +33,7 @@ namespace TodoApp.Services
             }
         }
 
-        public void SaveData(BindingList<TodoModel> todoDataList)
+        public void SaveData(object todoDataList)
         {
             using (StreamWriter writer = File.CreateText(PATH))
             {
